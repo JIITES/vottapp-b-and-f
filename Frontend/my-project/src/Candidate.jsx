@@ -142,6 +142,7 @@ const Candidate = () => {
   const [formData, setFormData] = useState({ name: "", party: "", age: "" });
   const [selectedFile, setSelectedFile] = useState(null);
 
+
   // Fetch candidates
   useEffect(() => {
     const fetchCandidates = async () => {
@@ -155,6 +156,8 @@ const Candidate = () => {
     };
     fetchCandidates();
   }, []);
+
+
 
   // Voting
   const voteCandidate = async (id) => {
@@ -177,16 +180,18 @@ const Candidate = () => {
     }
   };
 
+
+
   // Show update form
   const showUpdateForm = (candidate) => {
     setEditingId(candidate._id);
     setFormData({ name: candidate.name, party: candidate.party, age: candidate.age });
   };
 
-  // Handle form input
+ // Handle form input
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  // Submit update
+ // Submit update
   const handleSubmit = async (id) => {
     try {
       await api.put(`candidate/update/${id}`, formData);
@@ -282,7 +287,7 @@ const Candidate = () => {
                 <span className="font-semibold">Age:</span> {c.age}
               </p>
 
-              {/* Edit Form */}
+              {/* Edit update Form */}
               {editingId === c._id && (
                 <motion.div
                   className="bg-indigo-50 p-4 mb-4 rounded-lg border-l-4 border-indigo-600 shadow-inner"

@@ -16,7 +16,7 @@ require('dotenv').config();
             return res.status(401).json({error:'No token provided'});
         }
         try{
-            const decode=jwt.verify(token,process.env.JWT_SECRET, { expiresIn: '48h' })
+            const decode=jwt.verify(token,process.env.JWT_SECRET, { expiresIn:process.env.TOKEN_EXPIRY })
             req.user=decode; // Attach decoded user info to request object
             next();
         }catch{

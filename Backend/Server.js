@@ -1,16 +1,20 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
+require('dotenv').config();
 
-const PORT = 5000;
+
 const  bodyparser = require('body-parser');
    const db=require('./db.js')
    const UserRoute=require('./routes/userRoute.js')
 const CandidateRoute=require('./routes/Candidate.js')
 
+CLIENT_URL=process.env.CLIENT_URL;
+const PORT = process.env.PORT || 5000 ;
+
 
 app.use(cors({
-    origin: "http://localhost:5173", // your React app URL
+    origin: CLIENT_URL, // your React app URL
     methods: ["GET", "POST", "PUT", "DELETE"],
 
     credentials: true

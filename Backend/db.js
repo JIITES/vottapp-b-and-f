@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
+
 
 // Connect to MongoDB you have to create your own link
-const mongodbURL='mongodb://localhost:27017/jitheshDR';
+const MongodbURL=process.env.mongodbURL;
   
 //mandatory Set up to connection 
-mongoose.connect(mongodbURL,{
+mongoose.connect(MongodbURL,{
     useNewUrlParser:true,
     useUnifiedTopology: true 
 
