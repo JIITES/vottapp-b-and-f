@@ -3,9 +3,9 @@ const app = express();
 const cors = require('cors')
 require('dotenv').config();
 
+   const db=require('./db.js')
 
 const  bodyparser = require('body-parser');
-   const db=require('./db.js')
    const UserRoute=require('./routes/userRoute.js')
 const CandidateRoute=require('./routes/Candidate.js')
 
