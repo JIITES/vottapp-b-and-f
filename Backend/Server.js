@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000 ;
 
 
 app.use(cors({
-    origin: CLIENT_URL, // your React app URL
+    origin: CLIENT_URL || '*' ,// your React app URL
     methods: ["GET", "POST", "PUT", "DELETE"],
 
     credentials: true
@@ -23,7 +23,10 @@ app.use(cors({
 
   
 app.use(bodyparser.json())
-
+ 
+app.get('/',(req,res)=>{
+    res.send('server is running');
+})
 
 
 app.get('/api/votes', (req, res) => {
