@@ -6,11 +6,12 @@ require('dotenv').config();
    const db=require('./db.js')
 
 const  bodyparser = require('body-parser');
-   const UserRoute=require('./routes/userRoute.js')
-const CandidateRoute=require('./routes/Candidate.js')
+   const UserRoute=require('./routes/userRoute.js');
+const CandidateRoute=require('./routes/Candidate.js'),
 
-CLIENT_URL=process.env.CLIENT_URL;
-const PORT = process.env.PORT || 5000 ;
+
+CLIENT_URL=process.env.CLIENT_URL
+const PORT = process.env.PORT || 5000 
 const Client_url =  process.env.CLIENT_URL
 
 app.use(cors({

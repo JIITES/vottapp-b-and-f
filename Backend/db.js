@@ -34,10 +34,29 @@
 
 
 
+// const mongoose = require('mongoose');
+// require('dotenv').config();
+
+// const uri =process.env.MONGODB_URI;
+
+// if (!uri) {
+//   console.error("MONGODB_URI not found in environment variables");
+//   process.exit(1);
+// }
+
+// mongoose.connect(uri)
+//   .then(() => console.log(" Connected to MongoDB Atlas"))
+//   .catch(err => console.error(" MongoDB connection error:", err.message));
+
+
+// const db = mongoose.connection;
+//     module.exports = db;
+
+
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const uri =process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI;
 
 if (!uri) {
   console.error("MONGODB_URI not found in environment variables");
@@ -48,6 +67,6 @@ mongoose.connect(uri)
   .then(() => console.log(" Connected to MongoDB Atlas"))
   .catch(err => console.error(" MongoDB connection error:", err.message));
 
+const db = mongoose.connection;
 
-const db= mongoose.Connection;
-    module.exports = db;
+module.exports = db;
