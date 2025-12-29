@@ -12,10 +12,10 @@ const CandidateRoute=require('./routes/Candidate.js'),
 
 CLIENT_URL=process.env.CLIENT_URL
 const PORT = process.env.PORT || 5000 
-const Client_url =  process.env.CLIENT_URL
+// const Client_url =  process.env.Client_url
 
 app.use(cors({
-    origin:  Client_url || CLIENT_URL ,// your React app URL
+    origin:  CLIENT_URL ,// your React app URL
     methods: ["GET", "POST", "PUT", "DELETE"],
 
     credentials: true
