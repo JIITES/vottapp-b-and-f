@@ -227,7 +227,7 @@ const Candidate = () => {
   };
 
   return (
-    <div className="p-6 bg-gradient-to-r from-indigo-50 to-purple-50   rounded-2xl min-h-screen my-36">
+    <div className="p-6 bg-linear-to-r from-indigo-50 to-purple-50   rounded-2xl min-h-screen my-36">
       <h2 className="text-3xl font-bold text-indigo-900 mb-8 text-center drop-shadow-md">
         Candidate List
       </h2>

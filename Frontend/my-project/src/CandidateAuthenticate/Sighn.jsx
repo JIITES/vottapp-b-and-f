@@ -28,6 +28,7 @@ const Sighn = () => {
         
         }catch(error){
             console.error("Signup error:", error);
+            alert("Signup failed");
             setMessage(error.response?.data?.error || "Signup failed");
         }
      }
