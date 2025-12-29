@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import api from '../Axios';
-import { easeIn, motion } from 'framer-motion';
+import {  motion } from 'framer-motion';
 
 const Sighn = () => {
     const [name,setname]=useState('');
@@ -36,7 +36,7 @@ return (
   <div   className="flex items-center ">
       <motion.div initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }} className="  bg-gradient-to-r from-gray-800 via-gray-900 to-black  absolute  right-130 left-130 top-36 bottom-32  rounded-xl shadow-2xl w-100   text-white ">
+            transition={{ duration: 0.5 }} className=" bg-gradient-to from-gray-800 via-gray-900 to-black  absolute  right-130 left-130 top-36 bottom-32  rounded-xl shadow-2xl w-100   text-white ">
     <form
       onSubmit={fetchdata}
       // Removed the unnecessary w-[200] and bg-white, kept flex and gap styles

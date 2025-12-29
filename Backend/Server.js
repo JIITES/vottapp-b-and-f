@@ -9,7 +9,7 @@ const  bodyparser = require('body-parser');
    const UserRoute=require('./routes/userRoute.js');
 const CandidateRoute=require('./routes/Candidate.js');
 
-const CLIENT_URL=process.env.CLIENT_URL;
+// const CLIENT_URL=process.env.CLIENT_URL;
 const PORT = process.env.PORT || 5000 ;
 // const Client_url =  process.env.Client_url ;
 
@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 5000 ;
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    CLIENT_URL
+  "https://vottapp-b-and-f.onrender.com"
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
