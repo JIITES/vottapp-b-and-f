@@ -9,12 +9,17 @@ const  bodyparser = require('body-parser');
    const UserRoute=require('./routes/userRoute.js');
 const CandidateRoute=require('./routes/Candidate.js');
 
-const CLIENT_URL=process.env.CLIENT_URL;
-const PORT = process.env.PORT || 5000 ;
-const Client_url =  process.env.Client_url ;
+// const CLIENT_URLs=process.env.CLIENT_URL;
+// const PORT = process.env.PORT || 5000 ;
+// // const Client_url =  process.env.Client_url ;
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://vottapp-b-and-f.vercel.app"
+];
 
 app.use(cors({
-    origin:  CLIENT_URL && Client_url, // your React app URL
+    origin: allowedOrigins, // your React app URL
     
 
     methods: ["GET", "POST", "PUT", "DELETE"],
@@ -39,5 +44,5 @@ app.use('/candidate',CandidateRoute)
 
 
 app.listen(PORT, () => {
-    console.log(`Server is listening at http://localhost:${PORT}`);
+    console.log(`Server is listening on port:${PORT}`);
 });
