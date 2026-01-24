@@ -3,23 +3,19 @@ const app = express();
 const cors = require('cors')
 require('dotenv').config();
 
-   const db=require('./db.js')
+const db=require('./db.js')
 
 const  bodyparser = require('body-parser');
    const UserRoute=require('./routes/userRoute.js');
 const CandidateRoute=require('./routes/Candidate.js');
 
-// const CLIENT_URLs=process.env.CLIENT_URL;
-// const PORT = process.env.PORT || 5000 ;
-// // const Client_url =  process.env.Client_url ;
+const CLIENT_URLs=process.env.CLIENT_URL;
+const PORT = process.env.PORT || 5000 ;
+// const Client_url =  process.env.Client_url ;
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://vottapp-b-and-f.vercel.app"
-];
 
 app.use(cors({
-    origin: allowedOrigins, // your React app URL
+    origin: CLIENT_URLs, // your React app URL
     
 
     methods: ["GET", "POST", "PUT", "DELETE"],
